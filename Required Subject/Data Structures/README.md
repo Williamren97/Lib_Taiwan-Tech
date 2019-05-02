@@ -6,4 +6,6 @@
 
 [考古題2](https://drive.google.com/drive/folders/0B8kcO09ZL8eRYUsxbnV1QmNDMlU)
 
+[你需要的由台灣同學總結的研究所筆記](https://drive.google.com/drive/folders/0B1vTJEsavH2eT1BXQkJWTV9Eb1U)
+
 [如果你覺得太無聊，還可以順便minor一個資管的學位.....](https://www.academic.ntust.edu.tw/ezfiles/1/1001/img/776/590354746.pdf)
