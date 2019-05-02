@@ -1,0 +1,584 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2018/10/5 15:59
+# @Author  : William Ren
+# @Site    : 
+# @File    : Homework.py
+# @Software: PyCharm
+
+#!/usr/bin/python3
+
+from pydoc import plaintext
+
+
+
+def CaesarCipher(plaintext, key):
+    ciphertext = []
+
+    for i in range(len(plaintext)):
+        ciphertext.append(chr((ord(plaintext[i]) - ord('a') + key) % 26 + ord('a')))
+
+    return "".join(ciphertext)
+
+
+def MonoalphabeticCipher(plaintext, keyAlphabet):
+    ciphertext = []
+
+    for i in range(len(plaintext)):
+        ciphertext.append(keyAlphabet[ord(plaintext[i]) - ord('a')])
+
+    return "".join(ciphertext)
+
+
+'''
+    get text'x ,y location in table
+'''
+
+
+def getIndex(text, table):
+    for i in range(len(table)):
+        if (table[i] == text):
+            return (int)(i / 5), i % 5
+
+
+'''
+    get table's data in exactly location
+'''
+
+
+def getData(table, x, y):
+    if x == 5:
+        x = 0
+    if y == 5:
+        y = 0
+    return table[x * 5 + y]
+
+
+def PlayfairCipher(plaintext, key, mode):
+    result = []
+    table = []
+    dict = {}
+
+    # get table from key
+    for i in range(len(key)):
+        value = key[i]
+        if value == 'j':
+            value = 'i'
+        vis = dict.get(value, 0)
+        if vis == 0:
+            dict[value] = 1
+            table.append(value)
+    # append table
+    for i in range(26):
+        value = chr(i + ord('a'))
+
+        if value == 'j':
+            continue
+
+        vis = dict.get(value, 0)
+        if vis == 0:
+            table.append(value)
+
+    for i in range(0, len(plaintext), 2):
+
+        x1, y1 = getIndex(plaintext[i], table)
+        x2, y2 = getIndex(plaintext[i + 1], table)
+
+        if (x1 == x2):
+            if (mode == 1):
+                y1 = y1 + 1
+                y2 = y2 + 1
+            else:
+                if (y1 % 5 == 0):
+                    y1 = y1 + 4
+                else:
+                    y1 = y1 - 1
+
+                if (y2 % 5 == 0):
+                    y2 = y2 + 4
+                else:
+                    y2 = y2 - 1
+
+        elif (y1 == y2):
+            if (mode == 1):
+                x1 = x1 + 1
+                x2 = x2 + 1
+            else:
+                x1 = x1 - 1
+                x2 = x2 - 1
+        else:
+            y3 = y1
+            y1 = y2
+            y2 = y3
+
+        result.append(getData(table, x1, y1))
+        result.append(getData(table, x2, y2))
+
+    return "".join(result)
+
+
+def convertToFiveBinary(number):
+    result = []
+
+    while (number != 0):
+        bin = number % 2
+        number = (int)(number / 2)
+        result.insert(0, bin)
+
+    while (len(result) < 5):
+        result.insert(0, 0)
+
+    return result
+
+
+def convertToDecimal(binText):
+    result = 0
+    increment = 1
+
+    for i in range(len(binText) - 1, -1, -1):
+        if (binText[i] == 1):
+            result = result + increment
+
+        increment = increment * 2
+
+    return result
+
+
+def VernamCipher(plaintext, key):
+    binaryText = []
+    binaryKey = []
+    result = []
+
+    # get plaintext's binary data
+    for i in range(len(plaintext)):
+        binaryText.append(convertToFiveBinary(ord(plaintext[i]) - ord('a')))
+
+    # get key's binary data
+    for i in range(len(key)):
+        binaryKey.append(convertToFiveBinary(ord(key[i]) - ord('a')))
+
+    # xor operator
+    for i in range(len(plaintext)):
+        temp = []
+        index = i % len(key)
+
+        for j in range(5):
+            if (binaryText[i][j] == binaryKey[index][j]):
+                temp.append(0)
+            else:
+                temp.append(1)
+
+        result.append(chr(convertToDecimal(temp) % 26 + ord('a')))
+
+    return "".join(result)
+
+
+def RowTransposition(plaintext, key):
+    '''
+        plainText
+    '''
+    plainTextLen = len(plaintext)
+    row = (int)(plainTextLen / len(key)) + 1
+
+    table = [[] for i in range(len(key))]
+    result = []
+
+    for i in range(plainTextLen):
+        table[(int)(i / row)].append(plaintext[i])
+
+    for i in range(len(key)):
+        result.extend(table[key[i] - 1])
+
+    return "".join(result)
+
+
+def ProductCipher(plaintext, key):
+    result = [0 for i in range(len(plaintext))]
+
+    for i in range(len(plaintext)):
+        result[i] = plaintext[key[i] - 1]
+
+    return "".join(result)
+
+
+def showMenu():
+    runningFlag = True
+    while (runningFlag):
+        print("Please select encrypt function...")
+        print("1 caesar encrypt")
+        print("2 caesar decrypt")
+        print("3 Monoalphabetic encrypt")
+        print("4 Monoalphabetic decrypt")
+        print("5 Playfair encrypt")
+        print("6 Playfair decrypt")
+        print("7 Vernam encrypt")
+        print("8 Vernam decrypt")
+        print("9 RowTransposition encrypt")
+        print("10 RowTransposition decrypt")
+        print("11 Product encrypt")
+        print("12 Product decrypt")
+        print("13 exit")
+        select = int(input("Please select:", ))
+        if (select <= 0 or select > 13):
+            print("Invalid input")
+        else:
+            return select
+
+
+if __name__ == "__main__":
+    '''
+    plaintext = "keepgoingnevergiveup"
+    print("plaintext = ", plaintext);
+    print()
+
+    encryptText = CaesarCipher(plaintext, 7)
+    print("CaesarCipher encrypt : ", encryptText)
+    decryptText = CaesarCipher(encryptText, 19)
+    print("CaesarCipher decrypt : ", decryptText)
+    print()
+
+
+    encryptText = MonoalphabeticCipher(plaintext, "qwertyuiopasdfghjklzxcvbnm")
+    print("Monoalphabetic encrypt : ", encryptText)
+    decryptText = MonoalphabeticDecrypt(encryptText, "qwertyuiopasdfghjklzxcvbnm")
+    print("Monoalphabetic decrypt : ", decryptText)
+    print()
+
+
+    encryptText = PlayfairCipher(plaintext, "hit", "encrypt")
+    print("Playfair encrypt : ", encryptText)
+    decryptText = PlayfairCipher(encryptText, "hit", "decrypt")
+    print("Playfair decrypt : ", decryptText)
+    print()
+
+
+    encryptText = VernamCipher(plaintext, "con")
+    print("Vernam encrypt : ", encryptText)
+    decryptText = VernamCipher(encryptText, "con")
+    print("Vernam decrypt : ", decryptText)
+    print()
+
+
+    encryptText = RowTransposition(plaintext,[3,1,5,6,2,4,7,8])
+    print("RowTransposition encrypt : ", encryptText)
+    decryptText = RowTransposition(encryptText, [2,5,1,6,3,4,7,8])
+    print("RowTransposition decrypt : ", decryptText)
+    print()
+
+    encryptText = ProductCipher(plaintext,[15,11,19,18,16,3,7,14,2,20,4,12,9,6,1,5,17,13,10,8])
+    print("Product encrypt : ", encryptText)
+    decryptText = ProductCipher(encryptText, [15,9,6,11,16,14,7,20,13,19,2,12,18,8,1,5,17,4,3,10])
+    print("Product decrypt : ", decryptText)
+    print()
+
+    '''
+
+    runningFlag = True
+    while (runningFlag):
+        select = showMenu()
+        if (select == 13):
+            break
+
+        text = input("Please input msg:", )
+        key = input("Please input key:", )
+
+        if (select == 1 or select == 2):
+            msg = CaesarCipher(text, int(key))
+        elif (select == 3 or select == 4):
+            msg = MonoalphabeticCipher(text, key)
+        elif (select == 5 or select == 6):
+            msg = PlayfairCipher(text, key, select % 2)
+        elif (select == 7 or select == 8):
+            msg = VernamCipher(text, key)
+        elif (select == 9 or select == 10):
+            msg = RowTransposition(text, key)
+        else:
+            msg = ProductCipher(text, key)
+        print("msg=", msg)
+
+
+def CaesarCipher(plaintext, key):
+    ciphertext = []
+
+    for i in range(len(plaintext)):
+        ciphertext.append(chr((ord(plaintext[i]) - ord('a') + key) % 26 + ord('a')))
+
+    return "".join(ciphertext)
+
+
+def MonoalphabeticCipher(plaintext, keyAlphabet):
+    ciphertext = []
+
+    for i in range(len(plaintext)):
+        ciphertext.append(keyAlphabet[ord(plaintext[i]) - ord('a')])
+
+    return "".join(ciphertext)
+
+
+'''
+    get text'x ,y location in table
+'''
+
+
+def getIndex(text, table):
+    for i in range(len(table)):
+        if (table[i] == text):
+            return (int)(i / 5), i % 5
+
+
+'''
+    get table's data in exactly location
+'''
+
+
+def getData(table, x, y):
+    if x == 5:
+        x = 0
+    if y == 5:
+        y = 0
+    return table[x * 5 + y]
+
+
+def PlayfairCipher(plaintext, key, mode):
+    result = []
+    table = []
+    dict = {}
+
+    # get table from key
+    for i in range(len(key)):
+        value = key[i]
+        if value == 'j':
+            value = 'i'
+        vis = dict.get(value, 0)
+        if vis == 0:
+            dict[value] = 1
+            table.append(value)
+    # append table
+    for i in range(26):
+        value = chr(i + ord('a'))
+
+        if value == 'j':
+            continue
+
+        vis = dict.get(value, 0)
+        if vis == 0:
+            table.append(value)
+
+    for i in range(0, len(plaintext), 2):
+
+        x1, y1 = getIndex(plaintext[i], table)
+        x2, y2 = getIndex(plaintext[i + 1], table)
+
+        if (x1 == x2):
+            if (mode == 1):
+                y1 = y1 + 1
+                y2 = y2 + 1
+            else:
+                if (y1 % 5 == 0):
+                    y1 = y1 + 4
+                else:
+                    y1 = y1 - 1
+
+                if (y2 % 5 == 0):
+                    y2 = y2 + 4
+                else:
+                    y2 = y2 - 1
+
+        elif (y1 == y2):
+            if (mode == 1):
+                x1 = x1 + 1
+                x2 = x2 + 1
+            else:
+                x1 = x1 - 1
+                x2 = x2 - 1
+        else:
+            y3 = y1
+            y1 = y2
+            y2 = y3
+
+        result.append(getData(table, x1, y1))
+        result.append(getData(table, x2, y2))
+
+    return "".join(result)
+
+
+def convertToFiveBinary(number):
+    result = []
+
+    while (number != 0):
+        bin = number % 2
+        number = (int)(number / 2)
+        result.insert(0, bin)
+
+    while (len(result) < 5):
+        result.insert(0, 0)
+
+    return result
+
+
+def convertToDecimal(binText):
+    result = 0
+    increment = 1
+
+    for i in range(len(binText) - 1, -1, -1):
+        if (binText[i] == 1):
+            result = result + increment
+
+        increment = increment * 2
+
+    return result
+
+
+def VernamCipher(plaintext, key):
+    binaryText = []
+    binaryKey = []
+    result = []
+
+    # get plaintext's binary data
+    for i in range(len(plaintext)):
+        binaryText.append(convertToFiveBinary(ord(plaintext[i]) - ord('a')))
+
+    # get key's binary data
+    for i in range(len(key)):
+        binaryKey.append(convertToFiveBinary(ord(key[i]) - ord('a')))
+
+    # xor operator
+    for i in range(len(plaintext)):
+        temp = []
+        index = i % len(key)
+
+        for j in range(5):
+            if (binaryText[i][j] == binaryKey[index][j]):
+                temp.append(0)
+            else:
+                temp.append(1)
+
+        result.append(chr(convertToDecimal(temp) % 26 + ord('a')))
+
+    return "".join(result)
+
+
+def RowTransposition(plaintext, key):
+    '''
+        plainText
+    '''
+    plainTextLen = len(plaintext)
+    row = (int)(plainTextLen / len(key)) + 1
+
+    table = [[] for i in range(len(key))]
+    result = []
+
+    for i in range(plainTextLen):
+        table[(int)(i / row)].append(plaintext[i])
+
+    for i in range(len(key)):
+        result.extend(table[key[i] - 1])
+
+    return "".join(result)
+
+
+def ProductCipher(plaintext, key):
+    result = [0 for i in range(len(plaintext))]
+
+    for i in range(len(plaintext)):
+        result[i] = plaintext[key[i] - 1]
+
+    return "".join(result)
+
+
+def showMenu():
+    runningFlag = True
+    while (runningFlag):
+        print("Please select encrypt function...")
+        print("1 caesar encrypt")
+        print("2 caesar decrypt")
+        print("3 Monoalphabetic encrypt")
+        print("4 Monoalphabetic decrypt")
+        print("5 Playfair encrypt")
+        print("6 Playfair decrypt")
+        print("7 Vernam encrypt")
+        print("8 Vernam decrypt")
+        print("9 RowTransposition encrypt")
+        print("10 RowTransposition decrypt")
+        print("11 Product encrypt")
+        print("12 Product decrypt")
+        print("13 exit")
+        select = int(input("Please select:", ))
+        if (select <= 0 or select > 13):
+            print("Invalid input")
+        else:
+            return select
+
+
+if __name__ == "__main__":
+    '''
+    plaintext = "keepgoingnevergiveup"
+    print("plaintext = ", plaintext);
+    print()
+
+    encryptText = CaesarCipher(plaintext, 7)
+    print("CaesarCipher encrypt : ", encryptText)
+    decryptText = CaesarCipher(encryptText, 19)
+    print("CaesarCipher decrypt : ", decryptText)
+    print()
+
+
+    encryptText = MonoalphabeticCipher(plaintext, "qwertyuiopasdfghjklzxcvbnm")
+    print("Monoalphabetic encrypt : ", encryptText)
+    decryptText = MonoalphabeticDecrypt(encryptText, "qwertyuiopasdfghjklzxcvbnm")
+    print("Monoalphabetic decrypt : ", decryptText)
+    print()
+
+
+    encryptText = PlayfairCipher(plaintext, "hit", "encrypt")
+    print("Playfair encrypt : ", encryptText)
+    decryptText = PlayfairCipher(encryptText, "hit", "decrypt")
+    print("Playfair decrypt : ", decryptText)
+    print()
+
+
+    encryptText = VernamCipher(plaintext, "con")
+    print("Vernam encrypt : ", encryptText)
+    decryptText = VernamCipher(encryptText, "con")
+    print("Vernam decrypt : ", decryptText)
+    print()
+
+
+    encryptText = RowTransposition(plaintext,[3,1,5,6,2,4,7,8])
+    print("RowTransposition encrypt : ", encryptText)
+    decryptText = RowTransposition(encryptText, [2,5,1,6,3,4,7,8])
+    print("RowTransposition decrypt : ", decryptText)
+    print()
+
+    encryptText = ProductCipher(plaintext,[15,11,19,18,16,3,7,14,2,20,4,12,9,6,1,5,17,13,10,8])
+    print("Product encrypt : ", encryptText)
+    decryptText = ProductCipher(encryptText, [15,9,6,11,16,14,7,20,13,19,2,12,18,8,1,5,17,4,3,10])
+    print("Product decrypt : ", decryptText)
+    print()
+
+    '''
+
+    runningFlag = True
+    while (runningFlag):
+        select = showMenu()
+        if (select == 13):
+            break
+
+        text = input("Please input msg:", )
+        key = input("Please input key:", )
+
+        if (select == 1 or select == 2):
+            msg = CaesarCipher(text, int(key))
+        elif (select == 3 or select == 4):
+            msg = MonoalphabeticCipher(text, key)
+        elif (select == 5 or select == 6):
+            msg = PlayfairCipher(text, key, select % 2)
+        elif (select == 7 or select == 8):
+            msg = VernamCipher(text, key)
+        elif (select == 9 or select == 10):
+            msg = RowTransposition(text, key)
+        else:
+            newKey = [int(index) for index in key.split(",")]
+            msg = ProductCipher(text, newKey)
+        print("msg=", msg)
+
