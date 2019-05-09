@@ -1,12 +1,13 @@
 # 比較危險是因為老師喜歡你調一些敏感的地方去寫，不過老師本身也很有名氣就是。
-## 要滿足老師的個人愛好會比較容易高分，所以我覺得是老師主觀成分太大了，雖然這門課最後也拿了A。
-[老師的wiki介紹](https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%96%E8%8A%B3)
 
-[老師自己的部落格](https://medium.com/@mafang)
+## [老師的wiki介紹](https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%96%E8%8A%B3)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KIkuwe6-0r0?start=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## [老師自己的部落格](https://medium.com/@mafang)
 
-- 不過很累就是了，最好注意一下錯別字;文字段落;和封面這些細節性的問題。以下是老師在Moodle上公佈出來的提醒⏰
+
+
+
+- 要滿足老師的個人愛好會比較容易高分，所以我覺得是老師主觀成分太大了，雖然這門課最後也拿了A。不過很累就是了，最好注意一下錯別字;文字段落;和封面這些細節性的問題。以下是老師在Moodle上公佈出來的提醒⏰
 
 # 【重要】修課須知，請詳閱，以免後悔莫及
 ## 有意修課的同學，請務必詳閱此文，雖然有點長。
