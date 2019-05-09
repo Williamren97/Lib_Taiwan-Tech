@@ -1,8 +1,10 @@
 # 比較危險是因為老師喜歡你調一些敏感的地方去寫，不過老師本身也很有名氣就是。
 
-## [老師的wiki介紹](https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%96%E8%8A%B3)
+## [馬世芳的wiki介紹](https://zh.wikipedia.org/wiki/%E9%A6%AC%E4%B8%96%E8%8A%B3)
 
-## [老師自己的部落格](https://medium.com/@mafang)
+## [馬世芳的豆瓣](https://www.douban.com/people/honeypie/)
+
+## [馬世芳的部落格](https://medium.com/@mafang)
 
 
 
