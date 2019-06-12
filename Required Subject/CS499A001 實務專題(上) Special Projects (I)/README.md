@@ -9,3 +9,5 @@
 [https://zhuanlan.zhihu.com/p/24900888](https://zhuanlan.zhihu.com/p/24900888)
 
 [揭开YouTube深度推荐系统模型Serving之谜](https://zhuanlan.zhihu.com/p/61827629)
+
+[人工智能｜hulu 视频推荐系统从 0 至 1 构建之路](http://www.ijiandao.com/2b/baijia/70242.html)
