@@ -1,3 +1,5 @@
+# The lectuer is extremely let u feeling frustrated and desolate. hopefully never meet again 
+
 ## 談判過程 (1/2)
 
 - 談判的過程包括開場白、攻防戰、危機僵局的處理與簽約等各項步驟。
