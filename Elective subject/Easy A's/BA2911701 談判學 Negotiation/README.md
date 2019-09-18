@@ -1,4 +1,4 @@
-# The lectuer is extremely let u feeling frustrated and desolate. hopefully never meet again 
+# The lectuer's attitude is extremely let u feeling frustrated and desolate, Totally ignoble! WE hopefully never meet that lack of self-restricted individuals again 
 
 ## 談判過程 (1/2)
 
