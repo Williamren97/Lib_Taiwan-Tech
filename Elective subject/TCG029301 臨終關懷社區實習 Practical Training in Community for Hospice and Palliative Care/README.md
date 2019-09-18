@@ -1,3 +1,7 @@
 ## 其中大部分資源來自豆瓣。
 
-### 樓主最後喜提a minus💔😫😭，這門課有四次戶外參訪，真的是累爆啊。不過還好有妹子陪我，算是這門唯一的亮點了。還有就是夏天不要去草多的地方，mosquito和跳蚤太恐怖
+### Finally, I got an A minus form this course💔😫😭，This courses needs u to attending at least fourth times outdoor visiting. So exhausted.
+
+## BUt Whats's the most fantastic parts is have gorgeous girls be your friends as the companion.
+
+# Last but not least, Remember put on the long trousers when visiting the outsides, in prevent of mosquito plus plea!!!
