@@ -71,6 +71,8 @@ Issue、PR、纠错、资料、选课/考试攻略，完全欢迎！
 - [东南大学课程共享计划](https://github.com/zjdx1998/seucourseshare)
 - [中国科学技术大学计算机学院课程资源](https://github.com/mbinary/USTC-CS-Courses-Resource)
 - [上海交通大学课程资料分享](https://github.com/CoolPhilChen/SJTU-Courses/)
+- [中山大学课程资料分享](https://github.com/sysuexam/SYSU-Exam)
+- [南京大学课程复习资料](https://github.com/idealclover/NJU-Review-Materials)
 
 (more to be added....)
 ## BLACK MAIL
