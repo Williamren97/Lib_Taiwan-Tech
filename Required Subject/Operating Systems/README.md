@@ -14,3 +14,6 @@ The child process reads the result through the tube and writes it to the linux f
 
 ## FINAL HW
 <a href="https://hackmd.io/@_1d30IJoTJu9bkzWEOiipQ/H1BZUc7fN">Modify System call</a>
+
+## Tools
+<a href="https://elixir.bootlin.com/linux/latest/source/mm/swap.c#L660">LINUX Navigate</a>
