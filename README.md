@@ -75,7 +75,4 @@ Issue、PR、纠错、资料、选课/考试攻略，完全欢迎！
 - [南京大学课程复习资料](https://github.com/idealclover/NJU-Review-Materials)
 
 (more to be added....)
-## BLACK MAIL
-戴碧如 李汉铭 陈冠宇
 
-（排名不分先後）
