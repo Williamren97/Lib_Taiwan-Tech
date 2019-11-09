@@ -1,3 +1,4 @@
+## HW1
 - 1:Write a program using fork and clone in C/C++ in Ubuntu environment, as detailed below:  
 The program must use fork to create the process
 
@@ -7,3 +8,6 @@ The program must use fork to create the process
 
 - 4:The parent process writes the result of the computed and global variable to the pipeline  
 The child process reads the result through the tube and writes it to the linux file. The file name must be the student number.txt (plain number)
+
+## FINAL HW
+<a href="https://hackmd.io/@_1d30IJoTJu9bkzWEOiipQ/H1BZUc7fN">Modify System call</a>
