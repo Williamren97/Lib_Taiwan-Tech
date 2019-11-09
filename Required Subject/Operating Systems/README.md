@@ -9,5 +9,8 @@ The program must use fork to create the process
 - 4:The parent process writes the result of the computed and global variable to the pipeline  
 The child process reads the result through the tube and writes it to the linux file. The file name must be the student number.txt (plain number)
 
+## 記憶體管理九 linux記憶體頁面回收
+<a href="https://www.itread01.com/content/1542343269.html">linux記憶體頁面回收</a>
+
 ## FINAL HW
 <a href="https://hackmd.io/@_1d30IJoTJu9bkzWEOiipQ/H1BZUc7fN">Modify System call</a>
