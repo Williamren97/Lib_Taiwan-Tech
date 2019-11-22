@@ -1,3 +1,5 @@
+# If you think Ren Wei’s blog has helped you, please help him click on the star in the upper right corner.
+
 # Lib_Taiwan-Tech - 台灣科技大學課程資料整理
 
 ## Preface
