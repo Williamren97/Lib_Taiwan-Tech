@@ -4,6 +4,31 @@
 
 ## Preface
 
+When I came to a university, I first contacted many classes and completed them one by one. In the process, we often collected a lot of information and intelligence.
+
+Some are e-books that need to be searched online. Every time you see a new course, Google will give you the name of the textbook. Some can find it immediately, while others will cost a lot of eyesight. Some are calendar papers or A4 papers. Collecting and producing, holding ideas that can be useful to others, but they need to be explored in various groups or CC98 so that they can be passed down from generation to generation in the hands of the seniors; some are skills that are only comprehended after completing a course. It could have been done more easily at the beginning...
+
+I have also worked hard to collect various course materials, but in the end, some important information is often obtained by chance. This state often makes me feel scared and upset. I also had some methods and summaries after the end of the course, but these ideas have nowhere to tell, and in the end I can only spend the experience of spending time and energy on the long forgotten.
+
+I feel uncomfortable for the repetitive work of so many people fighting alone this year.
+
+I hope that these hidden, uncertain, and word-of-mouth materials and experiences will be turned into open, accessible, and shared materials that everyone can improve and accumulate.
+
+I hope that as long as it is a detour that the predecessors have passed, future generations will not have to go. This is my belief and the reason why I built this project.
+
+## Features
+
+The project has so far included the following contents:
+
+- Course selection guide
+- Electronic version of the textbook
+- Usually homework answers
+- Annual test papers
+- Review materials
+- Open book exam A4 paper
+
+and many more. The current program covers most of the professional courses in the program.
+
 Due to the large size of this project, it is recommended to use the **GitHub Web terminal to directly upload **, as follows:
 
 1. First, Fork this project
@@ -16,18 +41,25 @@ Due to the large size of this project, it is recommended to use the **GitHub Web
 
    - Or you can attach it directly to the Issue and add it by the maintainer.
 
-## Disclaimer
+## caveat
 
-This is not a library.
-We also make no commitment to the accuracy or authenticity of the information in the project.
+The following content is not suitable for uploading. If you believe that the lack of such information will affect the integrity of the resource, please give priority to the on-campus resource platform, or contact your teacher and be posted by the teacher. It is recommended that you write a README document and place some links or guidance text to help find these resources.
 
-## License
+- Pirated e-books / paid e-books
+- Piracy/Cracked/Green Edition Paid Software and its installation package
+- Content listed on the course/teacher homepage (please upload after obtaining teacher permission)
 
-The information comes from the network and the relevant rights are owned by the original author. This repo is only used to collect existing data.
+If you believe that some of the files in this warehouse infringe on your rights, please [send us an email] (mailto:tech@zjuqsc.com). We will completely remove these files from the repository.
 
-Of course, we will not charge for the collected information or try to collect the donation.
+## Licensing
 
-We just tried to save some time for the later classmates.
+The licenses written by the contributors are as follows:
+
+[CC-BY-NC-SA: Attribution-Noncommercial Use-Share in the Same Way] (https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+
+> The information is for reference only, please judge its applicability by yourself.
+
+The copyrights of other parts belong to their respective authors.
 
 ## Related Works
 
