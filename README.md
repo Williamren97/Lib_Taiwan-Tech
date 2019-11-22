@@ -49,7 +49,7 @@ The following content is not suitable for uploading. If you believe that the lac
 - Piracy/Cracked/Green Edition Paid Software and its installation package
 - Content listed on the course/teacher homepage (please upload after obtaining teacher permission)
 
-If you believe that some of the files in this warehouse infringe on your rights, please [send us an email] (mailto:tech@zjuqsc.com). We will completely remove these files from the repository.
+If you believe that some of the files in this warehouse infringe on your rights, please send us an email. We will completely remove these files from the repository.
 
 ## Licensing
 
