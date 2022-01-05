@@ -6,11 +6,11 @@
 
 * First, Fork this project
 
-* - Upload the file to an existing folder: Open the corresponding folder and click upload next to the green Download button to upload your file.
+* Upload the file to an existing folder: Open the corresponding folder and click upload next to the green Download button to upload your file.
 
    - Upload files to the new folder: Open any folder, click upload next to the green Download button, ** change the folder name in the browser address bar to the folder name you want to create, then press Enter, upload Your file.
 
-* - Submit PR:Fork this project, then click Upload File on the GitHub webpage to upload the file and start PR. Keep an eye on the file organization of the project.
+* Submit PR:Fork this project, then click Upload File on the GitHub webpage to upload the file and start PR. Keep an eye on the file organization of the project.
 
    - Or you can attach it directly to the Issue and add it by the maintainer.
 
